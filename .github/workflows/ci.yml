@@ -2,6 +2,7 @@ on:
    push:
       branches:
          - main
+         - blog
    pull_request:
       branches:
          - main
@@ -9,8 +10,11 @@ jobs:
    build:
       runs-on: ubuntu-latest
       steps:
-         - uses: actions/checkout@v2
-         - run: echo Simple step
-         - run: |
-            echo Multiline
-            echo step
+         - name: Checkout
+           uses: actions/checkout@v2
+         - name: Simple step
+           run: echo Simple step
+         - name: Multiline step
+           run: |
+             echo Multiline
+             echo step
